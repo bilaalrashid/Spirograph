@@ -1,3 +1,7 @@
 # Spirograph
 
-A java program to create spirographs
+A JavaFX program to draw spirographs
+
+## Screenshot
+
+![Screenshot](screenshot.png)
