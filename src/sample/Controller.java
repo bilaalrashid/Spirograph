@@ -55,6 +55,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.graphicsContext = this.canvas.getGraphicsContext2D();
+        this.graphicsContext.clearRect(0, 0, 600, 600);
         this.spirograph = new Spirograph(this.r1Slider.getValue(), this.r2Slider.getValue(), this.oSlider.getValue());
     }
 
@@ -72,6 +73,11 @@ public class Controller implements Initializable {
         for (Coordinate coordinate : coordinates) {
             this.graphicsContext.strokeOval(coordinate.getX() + 300, coordinate.getY() + 300, 1.0, 1.0);
         }
+    }
+
+    @FXML
+    private void clear() {
+        this.graphicsContext.clearRect(0, 0, 600, 600);
     }
 
 }
