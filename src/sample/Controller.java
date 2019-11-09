@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -25,6 +26,11 @@ public class Controller implements Initializable {
     private GraphicsContext graphicsContext;
 
     /**
+     * The spirograph
+     */
+    private Spirograph spirograph = new Spirograph(20.0, -1.0, 10.0);
+
+    /**
      * Initialises the graphics context from the canvas
      */
     @Override
@@ -37,7 +43,11 @@ public class Controller implements Initializable {
      */
     @FXML
     private void draw() {
+        ArrayList<Coordinate> coordinates = this.spirograph.getCoordiantes();
 
+        for (Coordinate coordinate : coordinates) {
+            this.graphicsContext.strokeOval(coordinate.getX() + 40, coordinate.getY() + 40, 0.6, 0.6);
+        }
     }
 
 }
