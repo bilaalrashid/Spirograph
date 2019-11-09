@@ -24,7 +24,7 @@ class Spirograph {
      */
     private double o;
 
-    // Contructor
+    // Constructor
 
     /**
      * Creates a new spirograph
@@ -38,6 +38,56 @@ class Spirograph {
         this.o = o;
     }
 
+    // Getters and Setters
+
+    /**
+     * Gets the value of the R variable
+     * @return The value of R
+     */
+    double getR1() {
+        return this.r1;
+    }
+
+    /**
+     * Sets the value of the R variable
+     * @param r1 The new value of R
+     */
+    void setR1(double r1) {
+        this.r1 = r1;
+    }
+
+    /**
+     * Gets the value of the r variable
+     * @return The value of r
+     */
+    double getR2() {
+        return this.r2;
+    }
+
+    /**
+     * Sets the value of the r variable
+     * @param r2 The new value of r
+     */
+    void setR2(double r2) {
+        this.r2 = r2;
+    }
+
+    /**
+     * Gets the value of the O variable
+     * @return The value of O
+     */
+    double getO() {
+        return this.o;
+    }
+
+    /**
+     * Sets the value of the O variable
+     * @param o The new value of O
+     */
+    void setO(double o) {
+        this.o = o;
+    }
+
     // Public methods
 
     /**
@@ -47,7 +97,7 @@ class Spirograph {
     ArrayList<Coordinate> getCoordiantes() {
         ArrayList<Coordinate> coordinateList = new ArrayList<Coordinate>();
 
-        for (double t = 0.0; t < 3 * Math.PI; t += 0.001) {
+        for (double t = 0.0; t < 30 * Math.PI; t += 0.001) {
             double x = calculateXCoord(this.r1, this.r2, this.o, t);
             double y = calculateYCoord(this.r1, this.r2, this.o, t);
 

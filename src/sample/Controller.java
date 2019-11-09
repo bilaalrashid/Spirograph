@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Slider;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,9 +27,27 @@ public class Controller implements Initializable {
     private GraphicsContext graphicsContext;
 
     /**
+     * The slider controlling that value of R
+     */
+    @FXML
+    private Slider r1Slider;
+
+    /**
+     * The slider controlling the value of r
+     */
+    @FXML
+    private Slider r2Slider;
+
+    /**
+     * The slider controlling the value of O
+     */
+    @FXML
+    private Slider oSlider;
+
+    /**
      * The spirograph
      */
-    private Spirograph spirograph = new Spirograph(20.0, -1.0, 10.0);
+    private Spirograph spirograph;
 
     /**
      * Initialises the graphics context from the canvas
@@ -36,6 +55,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.graphicsContext = this.canvas.getGraphicsContext2D();
+        this.spirograph = new Spirograph(this.r1Slider.getValue(), this.r2Slider.getValue(), this.oSlider.getValue());
     }
 
     /**
@@ -43,6 +63,10 @@ public class Controller implements Initializable {
      */
     @FXML
     private void draw() {
+        this.spirograph.setR1(this.r1Slider.getValue());
+        this.spirograph.setR2(this.r2Slider.getValue());
+        this.spirograph.setO(this.oSlider.getValue());
+
         ArrayList<Coordinate> coordinates = this.spirograph.getCoordiantes();
 
         for (Coordinate coordinate : coordinates) {
