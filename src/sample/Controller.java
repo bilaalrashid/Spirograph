@@ -70,7 +70,7 @@ public class Controller implements Initializable {
         ArrayList<Coordinate> coordinates = this.spirograph.getCoordiantes();
 
         for (Coordinate coordinate : coordinates) {
-            this.graphicsContext.strokeOval(coordinate.getX() + 40, coordinate.getY() + 40, 0.6, 0.6);
+            this.graphicsContext.strokeOval(coordinate.getX() + 300, coordinate.getY() + 300, 1.0, 1.0);
         }
     }
 
